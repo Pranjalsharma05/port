@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#9733; PRANJAL SHARMA</title>
+    <link rel="icon" type="image/x-icon" href="ps (2).jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-NJU5RkntuoANQDt1o4L/J4l4Lvaw0z+U92+3JDX8/LWTF6jC8lV1dzBf/KW4GtIv" crossorigin="anonymous">
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            height: 100vh;
+        }
+        
+        
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000; /* Make sure the video is behind all other content */
+            object-fit: cover;
+        }
+        
+        
+        header {
+            background-color: transparent;
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            max-width: 60%;
+            margin: 0 auto;
+            padding: 0 20px;
+            border-radius: 30px;
+            border: 2px solid rgb(235, 213, 213); /* Use border property to specify width, style, and color */
+        
+        
+            flex-wrap: wrap;
+        }
+        
+        
+        @media (max-width: 768px) {
+            nav {
+                justify-content: center;
+                max-width: 100%;
+            }
+        
+            .nav-links li {
+                margin: 10px; /* Adjust spacing for smaller screens */
+            }
+        }
+        
+        
+       
+        
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+        
+        }
+        
+        .nav-links li {
+            
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-links li a {
+            color: #1fa4e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links li:hover {
+            background-color: #1fa4e1;
+            color: #ffcc00;
+            transform: translateY(-5px);
+        }
+        
+        
+        .nav-links li a:hover {
+            background-color: #1fa4e1;
+            color: #ffcc00;
+            transform: translateY(-5px);
+        }
+        #home{
+            background-image: url(https://cdn.pixabay.com/photo/2015/05/26/23/52/technology-785742_1280.jpg);
+            background-repeat: no-repeat;
+            background-size: cover; 
+            margin: 0 auto;     
+            height: 80%;
+            width: 95%;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+           /* backdrop-filter: blur(50px); /* Apply blur effect to the background */
+            position: relative; /* Required for z-index */
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            #home h1 {
+                font-size: 2rem;
+            }
+        
+            #home p {
+                font-size: 1rem;
+            }
+        }
+        
+        #home h1, #home p {
+            text-align: center; /* Center text inside the content */
+            position: relative; /* Position the text relative to the parent */
+            z-index: 1; /* Place the text above the blurred background */
+            color: #6bbe52; /* Text color */
+        }
+        
+        #home h1 {
+            font-size: 3rem; /* Adjust the font size as needed */
+        }
+        
+        #home p {
+            font-size: 1.5rem; /* Adjust the font size as needed */
+        }
+        #about {
+         height: 75%;
+         width: 90%;
+            padding: 40px; /* Padding around the content */
+        }
+        
+        #about h2 {
+            text-align: center;
+            color: #0778e9; /* Header text color */
+            font-size: 2.5rem; /* Header font size */
+            margin-bottom: 20px; /* Bottom margin for the header */
+        }
+        
+        #about p {
+            text-align: center;
+            color: #c3c9ce; /* Paragraph text color */
+            font-size: 1.2rem; /* Paragraph font size */
+            line-height: 1.6; /* Line height for better readability */
+            margin-bottom: 20px; /* Bottom margin for paragraphs */
+        }
+
+        @media (max-width: 768px) {
+            #experience, .content {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .boxes {
+                width: 90%; /* Take up more space on smaller screens */
+                margin: 10px auto; /* Center align the boxes */
+            }
+        }
+        
+
+        #experience
+        {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-left: 30px;
+        }
+        #projects {
+            position: relative;
+            overflow: hidden;
+            height: 80vh;
+            width: 100%;
+        }
+        
+        .background-video {
+            position: absolute;
+            width: 95%;
+            border-radius: 20px;
+            margin-left: 30px;
+            object-fit: cover;
+        }
+        
+       .content {
+            position: relative;
+            z-index: 1; /* Ensure content is on top of the video */
+            text-align: center; /* Adjust text alignment as needed */
+            color: #6bbe52; /* Adjust text color for better visibility */
+            padding-top: 10vh; /* Adjust padding to center content vertically */
+        }
+        .content h2, .content p {
+            text-align: center; /* Center text inside the content */
+            position: relative; /* Position the text relative to the parent */
+            z-index: 1; /* Place the text above the blurred background */
+            color: #6bbe52; /* Text color */
+        }
+        
+        .content h2 {
+            font-size: 5rem; /* Adjust the font size as needed */
+        }
+        
+        .content p {
+            font-size: 3rem; /* Adjust the font size as needed */
+        }
+        /* Existing styles remain unchanged */
+
+
+        
+        section#projects button {
+            padding: 10px 20px; /* Add padding around the text */
+            background-color: transparent; /* Use transparent background */
+            color: white; /* White text color */
+            font-weight: bold; /* Make the text bold */
+            border: 2px solid white; /* Add border to make the button visible */
+            border-radius: 50px; /* Slightly rounded corners */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+            outline: none; /* Remove the outline to keep the design clean */
+        }
+        
+        section#projects button:hover {
+            background-color: #5da946; /* Darken the button on hover for feedback */
+        }
+        
+        section#projects button:focus {
+            box-shadow: 0 0 0 2px rgba(109,187,82,0.5); /* Add a glow effect when focused */
+        }
+        
+       
+        .heading {
+            text-align: center;
+            width: 100%; /* Optionally, you can set the width to 100% to ensure the heading spans the full width */
+            color: #0778e9; /* Header text color */
+            font-size: 1.5rem; /* Header font size */
+            margin-bottom: 10px; /* Bottom margin for the header */
+        }
+        
+    
+        .boxes {
+            width: 300px;
+            height: 420px;
+            border-radius: 10px;
+            perspective: 1400px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            margin: 10px;
+        }
+    
+        .boxes:hover {
+            transform: scale(1.05);
+        }
+    
+        
+    
+        .upper {
+            text-align: center;
+            background: radial-gradient(circle, rgba(100, 47, 210, 1) 0%, rgba(37, 17, 92, 1) 100%);
+            border: 1px solid rgba(82, 62, 155, .5);
+        }
+    
+        .middle {
+            background: radial-gradient(circle, rgba(29, 20, 61, .95) 0%, rgba(27, 13, 39, .95) 50%, rgba(8, 5, 16, .95) 100%);
+            border: 1px solid rgba(82, 62, 155, .25);
+            color: #f0f8ff;
+            font-family: "Exo 2", sans-serif;
+            padding: 20px;
+            height: 100%;
+            box-sizing: border-box;
+            text-align: left; /* Added text alignment */
+        }
+    
+        .middle_title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    
+        .middle_text {
+            font-size: 14px;
+            overflow-y: auto; /* Added to enable vertical scrolling */
+        }
+    
+        .lower {
+            display: flex;
+            align-items: center;
+            margin-top: auto; /* Push logo and company name to the bottom */
+        }
+    
+        .lower img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+@media (max-width: 768px) {
+    .certificate_1, .certificate_2 {
+        flex-direction: column;
+    }
+    .description-right, .description-left {
+        width: 80%; /* Adjust width for smaller screens */
+        margin: 10px auto; /* Center align descriptions */
+    }
+}
+
+        .certificates {
+            width: 100%;
+            gap: 50px; 
+        }
+        .certificate_1, .certificate_2 {
+            margin-top: 20px;
+            width: 100%;
+            
+            display: flex;
+            justify-content: space-evenly;
+            position: relative; 
+            
+        }
+        .certificate_1 img {
+            transition: transform 0.3s ease; 
+            border-radius: 5px;
+            width: 50%;
+           height: 40%;
+           object-fit: cover;
+            
+        }
+        .certificate_2 img{
+            transition: transform 0.3s ease; 
+            border-radius: 5px;
+            width: 80%;
+            margin-left: 15%;
+           
+            object-fit: fill;
+            
+            
+        }
+        .description-right, .description-left {
+            width: 40%;
+            transition: background-color 0.3s ease; 
+            padding: 10px;
+            border-radius: 5px; 
+            color: aliceblue;
+        }
+        .description-left{
+            width: 80%;
+            margin-left: 3%;
+        }
+
+        /* Hover effects */
+        .certificate_1:hover img, .certificate_2:hover img {
+            transform: scale(1.05); 
+        }
+        .certificate_1:hover .description-right, .certificate_2:hover .description-left {
+            background-color: rgba(169, 164, 164, 0.1); 
+        } 
+        
+        #achievements h2 {
+            text-align: center;
+            color: #0778e9; /* Header text color */
+            font-size: 2.5rem; /* Header font size */
+            margin-bottom: 20px; /* Bottom margin for the header */
+        }
+
+        #contact {
+            color: #0778e9;
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop playbackRate="0.1">
+        <source src="https://media.istockphoto.com/id/694579060/video/the-milky-way-on-the-alps-time-lapse.mp4?s=mp4-640x640-is&k=20&c=S43D1FG9iSa0xRVXnKbIdyLW83KCQtJt212prw6iuSc=" type="video/mp4">
+    </video>
+    
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Experience</a></li>
+                <li><a href="#contact">Projects</a></li>  
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#blog">Blog/Articles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Your content goes here -->
+    <section id="home">
+        <div class="content">
+            <img src="ps (2).jpg">
+            <h1>Hii, I am PRANJAL SHARMA</h1>
+            <p>4th Semester Computer Science and Engineering student.At Himachal Pradesh Technical University,Hamirpur.(H.P)</p>
+        </div>
+    </section>
+    <style>
+        #home .content {
+            text-align: center; /* Center the content horizontally */
+        }
+        
+        #home img {
+            width: 200px; 
+            height: 200px; 
+            border-radius: 50%; 
+            border: 5px solid #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+            margin-top: 20px; 
+        }
+        
+    </style>
+
+    <section id="about">
+       
+            <h2>About Me</h2>
+            <p>Me and My Journey</p>
+       
+        <p>Hi there! I'm PRANJAL SHARMA, a passionate Computer Science student currently in my second year. My journey into the world of technology began with a fascination for computers and a curiosity to understand how they work.Throughout my academic journey, I've developed a keen interest in various fields of computer science, including software development, data structures and algorithms, web development, and artificial intelligence. I enjoy tackling challenging problems and exploring innovative solutions.</p>
+        
+        <p>Besides academics, I actively participate in extracurricular activities such as coding competitions, hackathons, and tech workshops. These experiences have not only sharpened my technical skills but also taught me valuable lessons in teamwork, time management, and problem-solving.
+        When I'm not immersed in coding or studying, you can find me exploring the latest trends in technology, reading tech blogs, or working on personal coding projects. I believe in lifelong learning and strive to stay updated with the rapidly evolving tech landscape.</p>
+        
+        <p>Looking ahead, I'm excited to continue my journey in computer science, further honing my skills, and contributing to meaningful projects that make a positive impact on society.</p>
+        <!-- Add more content as needed -->
+    </section>
+    
+    <section id="experience">
+        <div class="heading">
+            <h2>EXPERIENCE</h2>
+            <p>Read what I leant through various organisations</p>
+        </div>
+    
+        <div class="boxes">
+            
+            <div class="upper">
+                <p>Tap to read</p>
+            </div>
+            <div class="middle">
+                <p class="middle_title">FRESHER NOT YET EXPERIENCED</p>
+                <div class="middle_text">
+                    <p>ॐ सरस्वती मया दृष्ट्वा, वीणा पुस्तक धारणीम् । हंस वाहिनी समायुक्ता मां विद्या दान करोतु में ॐ ।</p>
+                    <ul>
+                        <li>✨ Task 1</li>
+                        <li>✨ Task 2</li>
+                    </ul>
+                </div>
+                <div class="lower">
+                    <img src="https://cdn.pixabay.com/photo/2014/12/15/14/05/home-office-569153_640.jpg" alt="Company Logo">
+
+                    <p>Company Name</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="boxes">
+            
+            <div class="upper">
+                <p>Tap to read</p>
+            </div>
+            <div class="middle">
+                <p class="middle_title">FRESHER NOT YET EXPERIENCED</p>
+                <div class="middle_text">
+                    <p>ॐ भूर्भुव: स्व: तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो न: प्रचोदयात् ।</p>
+                    <ul>
+                        <li>✨ Task 1</li>
+                        <li>✨ Task 2</li>
+                    </ul>
+                </div>
+                <div class="lower">
+                    <img src="https://cdn.pixabay.com/photo/2019/04/29/16/11/work-4166471_640.png" alt="Company Logo">
+                    <p>Company Name</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="boxes">
+            
+            <div class="upper">
+                <p>Tap to read</p>
+            </div>
+            <div class="middle">
+                <p class="middle_title">FRESHER NOT YET EXPERIENCED</p>
+                <div class="middle_text">
+                    <p>ॐ अर्हं मुख कमल वासिनी पापात्म क्षयम् कारी वद वद वाग्वादिनी सरस्वती ऐं ह्रीं नमः स्वाहा ।</p>
+                    <ul>
+                        <li>✨ Task 1</li>
+                        <li>✨ Task 2</li>
+                    </ul>
+                </div>
+                <div class="lower">
+                    <img src="https://cdn.pixabay.com/photo/2014/10/16/09/15/lens-490806_640.jpg" alt="Company Logo">
+                    <p>Company Name</p>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </section>
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+    <section id="projects">
+        <video autoplay loop muted class="background-video">
+            <source src="https://cdn.pixabay.com/vimeo/148614367/laptop-1625.mp4?width=640&hash=ecfedff43badeea4e5465f284dc7298fb8f1b082" type="video/mp4">
+            
+        </video>
+        <div class="content">
+            <h2>View My Projects</h2>
+            <p>These are my  projects 😄! I hope You'll like them.</p>
+            <!-- <button>🔍 EXPLORE</button> -->
+            <button><i class="fas fa-search"></i> EXPLORE</button>
+
+        </div>
+        
+    </section>
+    
+        
+        
+      
+
+    <section id="achievements">
+        <h2>Certificates </h2>
+        <div class="certificates">
+            <div class="certificate_1">
+                <img src="IMGPROCESSING.png" alt="Certificate 1" />
+                <div class=" description-right"><strong>ADVANCES&INNOVATION IN IMAGE PROCESSING</strong><br>
+                    To fix the issue and correctly position the description text relative to its respective image as intended <br>(on the right for the first image and on the left for the second),<br> you'll need to adjust the CSS. The primary issue in your CSS is with the positioning of the<br> .description and .description-right classes. Since you're looking to position the descriptions<br> outside and to the side of the images, it's more appropriate to use absolute positioning for <br>the description elements within their relative container, rather than relative positioning.
+                </div>
+            </div>
+            <div class="certificate_2">
+                <div class=" description-left"><strong>RASTFA 2023</strong><br>
+                 
+                   To fix the issue and correctly position the description text relative to its respective image as intended<br> (on the right for the first image and on the left for the second), you'll need to adjust the CSS. The primary issue in your CSS is with the positioning of the<br>. .description and .description-right classes. Since you're looking to position the descriptions<br> outside and to the side of the images, it's more appropriate to use absolute positioning for the description elements within their relative container, rather than relative positioning.</div>
+                <div>
+                    <img class="image2" src="RAFTA.jpg" alt="Certificate 2" />
+                </div>
+            </div>
+            <div class="certificate_1">
+                <img src="PYGUVI.jpg" alt="Certificate 1" />
+                <div class=" description-right"><strong>GUVI PYTHON</strong><br>
+                    To fix the issue and correctly position the description text relative to its respective image as intended <br>(on the right for the first image and on the left for the second),<br> you'll need to adjust the CSS. The primary issue in your CSS is with the positioning of the<br> .description and .description-right classes. Since you're looking to position the descriptions<br> outside and to the side of the images, it's more appropriate to use absolute positioning for <br>the description elements within their relative container, rather than relative positioning.
+                </div>
+            </div>
+            <div class="certificate_2">
+                <div class=" description-left"><strong>UDYMY PYTHON</strong><br>
+                 
+                   To fix the issue and correctly position the description text relative to its respective image as intended<br> (on the right for the first image and on the left for the second), you'll need to adjust the CSS. The primary issue in your CSS is with the positioning of the<br>. .description and .description-right classes. Since you're looking to position the descriptions<br> outside and to the side of the images, it's more appropriate to use absolute positioning for the description elements within their relative container, rather than relative positioning.</div>
+                <div>
+                    <img class="image2" src="PYUDYMY.png" alt="Certificate 2" />
+                </div>
+            </div>
+
+
+            <div class="certificate_1">
+                <img src="https://cdn.qwiklabs.com/RshPhz3CtNIya%2F8v2wDfRsaWLitOB3yRV73Oqq1iAtQ%3D" alt="Certificate 1" />
+                <div class=" description-right"><strong>Introduction to Generative AI</strong><br>
+                    This is an introductory level microlearning course aimed at explaining what Generative AI is, how it is used, and how it differs from traditional machine learning methods. It also covers Google Tools to help you develop your own Gen AI apps.                </div>
+            </div>
+            <div class="certificate_2">
+                <div class=" description-left"><strong>CHNDRAYAAN-3</strong><br>
+                 
+                   To fix the issue and correctly position the description text relative to its respective image as intended<br> (on the right for the first image and on the left for the second), you'll need to adjust the CSS. The primary issue in your CSS is with the positioning of the<br>. .description and .description-right classes. Since you're looking to position the descriptions<br> outside and to the side of the images, it's more appropriate to use absolute positioning for the description elements within their relative container, rather than relative positioning.</div>
+                <div>
+                    <img class="image2" src="YAAN.jpg" alt="Certificate 2" />
+                </div>
+            </div>
+            <div class="certificate_1">
+                <img src="UNSTOP.png" alt="Certificate 1" />
+                <div class=" description-right"><strong>UNSTOP</strong><br>
+                    To fix the issue and correctly position the description text relative to its respective image as intended <br>(on the right for the first image and on the left for the second),<br> you'll need to adjust the CSS. The primary issue in your CSS is with the positioning of the<br> .description and .description-right classes. Since you're looking to position the descriptions<br> outside and to the side of the images, it's more appropriate to use absolute positioning for <br>the description elements within their relative container, rather than relative positioning.
+                </div>
+            </div>
+            <div class="certificate_2">
+                <div class=" description-left"><strong>CHNDRAYAAN-3</strong><br>
+                 
+                   To fix the issue and correctly position the description text relative to its respective image as intended<br> (on the right for the first image and on the left for the second), you'll need to adjust the CSS. The primary issue in your CSS is with the positioning of the<br>. .description and .description-right classes. Since you're looking to position the descriptions<br> outside and to the side of the images, it's more appropriate to use absolute positioning for the description elements within their relative container, rather than relative positioning.</div>
+                <div>
+                    <img class="image2" src="YAAN.jpg" alt="Certificate 2" />
+                </div>
+            </div>
+            <!-- Repeat for more certificates as needed -->
+        </div>
+    </section>
+    <br><br>
+
+    <section id="resume">
+        <div class="content">
+        <h2>RESUME/CV</h2>
+        <a href="PRANJAL CV.pdf" class="cv-button" target="_blank"><i class="fas fa-file-alt"></i> VIEW MY CV</a>
+        <a href="PRANJAL_RSE1.pdf" class="resume-button" target="_blank"><i class="far fa-file"></i> VIEW MY RESUME</a>
+        
+
+    </div>
+    </section>
+    <style>
+        #resume {
+            color: #f0f8ff;
+            text-align: center; /* Center the iframe horizontally */
+            display: flex;
+            width: 95%;
+            justify-content: space-evenly;
+        
+        background-image: url(https://img.freepik.com/premium-photo/office-desk-with-computer-supplies-top-view-with-space-your-text_522560-22122.jpg?w=996);
+            background-repeat: no-repeat;
+            background-size: cover; 
+            margin: 0 auto;     
+            height: 80%;
+            width: 95%;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+           /* backdrop-filter: blur(50px); /* Apply blur effect to the background */
+            position: relative; /* Required for z-index */
+            opacity: 0.6;
+        }
+        .cv-button,
+        .resume-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .cv-button:hover,
+        .resume-button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Style for icon */
+        .cv-button i,
+        .resume-button i {
+            margin-right: 5px;
+        }
+        
+        /* Additional style for specific button */
+        .cv-button {
+            background-color: #28a745; /* Green color for CV button */
+        }
+        
+        .resume-button {
+            background-color: #dc3545; /* Red color for Resume button */
+        }
+        
+        
+    </style>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <!-- Add more content as needed -->
+    </section>
+
+    <section id="blog">
+        <h2>Blog/Articles</h2>
+        <!-- Add more content as needed -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p>Email: pranjal202522@gmail.com</p>
+            <p>Phone: +919520955620</p>
+            <!-- Add more contact information as needed -->
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>Designed and coded with coffee stains and late-night giggles. Thanks for scrolling this far!</p><p>"This website is 64% HTML, 35% CSS, and 1% magic. Don't ask about the magic part."</p>
+            <p>© PRANJAL SHARMA - All rights and wrongs reversed. Go ahead, copy-paste, I won't judge!</p>
+        </div>
+    </footer>
+    <style>
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #2c79ac;
+        }
+        
+        .footer-content p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .footer-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+    </style>
+    
+</body>
+</html>
